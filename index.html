@@ -14,6 +14,32 @@
         }
 
         body {
+      position: relative;
+      background: linear-gradient(90deg, rgba(0,0,0,0.85) 15%, rgba(0,0,0,0.55) 50%, rgba(0,0,0,0.85) 85%);
+      color: #e0e0e0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* Sfondo bombolette laterali */
+    body::before,
+    body::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 300px;
+      background: url('rc-magic-cleaner-pulitore-specifico-per-modellismo-dinamico-200ml.jpg') center center / contain no-repeat;
+      opacity: 0.5;
+      z-index: 0;
+    }
+    body::before { left: 0; }
+    body::after { right: 0; }
+    
             background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
             color: #e0e0e0;
             display: flex;
@@ -673,12 +699,35 @@
             color: #00a8ff;
             font-family: 'Orbitron', sans-serif;
         }
-    </style>
+    
+    /* Logo brillante dinamico */
+    .page-logo {
+      position: absolute;
+      width: 130px;
+      z-index: 50;
+      filter: drop-shadow(0 0 12px rgba(0, 255, 255, 0.9));
+      transition: all 0.5s ease;
+    }
+    #page1 .page-logo { top: 20px; right: 20px; }
+    #page2 .page-logo, #page4 .page-logo, #page6 .page-logo, #page8 .page-logo, #page10 .page-logo {
+      bottom: 20px; left: 20px;
+    }
+    #page3 .page-logo, #page5 .page-logo, #page7 .page-logo, #page9 .page-logo {
+      bottom: 20px; right: 20px;
+    }
+
+    @media (max-width: 768px) {
+      body::before, body::after { width: 160px; opacity: 0.35; }
+      .page-logo { width: 90px; }
+    }
+
+</style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
     <div class="brochure">
-        <div id="page1" class="page active">
+        <div id="page1" class="page">
+            <img src="IKKI_Solution.png" alt="IKKI Solutions Logo" class="page-logo" active">
             <div class="cover">
                 <h1>C29</h1>
                 <p class="subtitle">Il più versatile in commercio</p>
@@ -703,6 +752,7 @@
         </div>
 
         <div id="page2" class="page">
+            <img src="IKKI_Solution.png" alt="IKKI Solutions Logo" class="page-logo"">
             <div class="full-image-section">
                 <h2 class="section-title">PRESTAZIONI IMBATTIBILI</h2>
                 <div class="media-container">
@@ -725,6 +775,7 @@
         </div>
 
         <div id="page3" class="page">
+            <img src="IKKI_Solution.png" alt="IKKI Solutions Logo" class="page-logo"">
             <div class="content-page">
                 <h2 class="section-title">AUTONOMIA E RICARICA</h2>
                 
@@ -756,6 +807,7 @@
         </div>
 
         <div id="page4" class="page">
+            <img src="IKKI_Solution.png" alt="IKKI Solutions Logo" class="page-logo"">
             <div class="content-page">
                 <h2 class="section-title">VERSATILITÀ E PRATICITÀ</h2>
                 
@@ -787,6 +839,7 @@
         </div>
 
         <div id="page5" class="page">
+            <img src="IKKI_Solution.png" alt="IKKI Solutions Logo" class="page-logo"">
             <div class="full-image-section">
                 <h2 class="section-title">SPECIFICHE TECNICHE</h2>
                 <div class="media-container">
@@ -833,6 +886,7 @@
         </div>
 
         <div id="page6" class="page">
+            <img src="IKKI_Solution.png" alt="IKKI Solutions Logo" class="page-logo"">
             <div class="content-page">
                 <h2 class="section-title">BATTERIA SOSTITUIBILE</h2>
                 
@@ -876,6 +930,7 @@
         </div>
 
         <div id="page7" class="page">
+            <img src="IKKI_Solution.png" alt="IKKI Solutions Logo" class="page-logo"">
             <div class="full-image-section">
                 <h2 class="section-title">BATTERIA AD ALTA CAPACITÀ</h2>
                 <div class="media-container">
@@ -909,6 +964,7 @@
         </div>
 
         <div id="page8" class="page">
+            <img src="IKKI_Solution.png" alt="IKKI Solutions Logo" class="page-logo"">
             <div class="content-page">
                 <h2 class="section-title">FILTRO HAIPA LAVABILE</h2>
                 
@@ -948,6 +1004,7 @@
             </div>
         </div>
         <div id="page9" class="page">
+            <img src="IKKI_Solution.png" alt="IKKI Solutions Logo" class="page-logo"">
             <div class="content-page">
                 <h2 class="section-title">VERSATILITÀ E PRATICITÀ</h2>
                 
@@ -977,6 +1034,7 @@
                 <div class="page-indicator">Pagina 9 di 10</div>
             </div>
         </div><div id="page10" class="page">
+            <img src="IKKI_Solution.png" alt="IKKI Solutions Logo" class="page-logo"">
             <div class="content-page">
                 <h2 class="section-title">VERSATILITÀ E PRATICITÀ</h2>
                 
