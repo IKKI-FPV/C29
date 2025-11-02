@@ -6,29 +6,24 @@
     <title>C29 - Depliant Ufficiale</title>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Exo+2:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Exo 2', sans-serif;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Exo 2', sans-serif; }
 
         body {
-      background:
-        linear-gradient(90deg, rgba(0,0,0,0.85) 15%, rgba(0,0,0,0.55) 50%, rgba(0,0,0,0.85) 85%),
-        url('rc-magic-cleaner-pulitore-specifico-per-modellismo-dinamico-200ml.jpg') left center no-repeat,
-        url('rc-magic-cleaner-pulitore-specifico-per-modellismo-dinamico-200ml.jpg') right center no-repeat;
-      background-size: contain, contain;
-      background-attachment: fixed;
-    
-            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
-            color: #e0e0e0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 20px;
-            min-height: 100vh;
-            overflow-x: hidden;
+          background:
+            linear-gradient(90deg, rgba(0,0,0,0.85) 15%, rgba(0,0,0,0.55) 50%, rgba(0,0,0,0.85) 85%),
+            url('rc-magic-cleaner-pulitore-specifico-per-modellismo-dinamico-200ml.jpg') left center no-repeat,
+            url('rc-magic-cleaner-pulitore-specifico-per-modellismo-dinamico-200ml.jpg') right center no-repeat;
+          background-size: contain, contain;
+          background-attachment: fixed;
+
+          background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
+          color: #e0e0e0;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          padding: 20px;
+          min-height: 100vh;
+          overflow-x: hidden;
         }
 
         .brochure {
@@ -45,1417 +40,643 @@
 
         .brochure::before {
             content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 3px;
+            position: absolute; top: 0; left: 0; right: 0; height: 3px;
             background: linear-gradient(90deg, #00a8ff, #00fff2, #9d4edd, #00a8ff);
             z-index: 10;
         }
 
-        .page {
-            display: none;
-            padding: 0;
-            min-height: 80vh;
-        }
-
-        .active {
-            display: block;
-        }
+        .page { display: none; padding: 0; min-height: 80vh; }
+        .active { display: block; }
 
         .cover {
             background: radial-gradient(circle at center, #0c1b33 0%, #050a15 100%);
-            color: white;
-            text-align: center;
-            padding: 60px 40px;
-            position: relative;
-            min-height: 80vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            overflow: hidden;
+            color: white; text-align: center; padding: 60px 40px; position: relative;
+            min-height: 80vh; display: flex; flex-direction: column; justify-content: center; align-items: center; overflow: hidden;
         }
 
         .cover::before {
-            content: '';
-            position: absolute;
-            width: 300%;
-            height: 300%;
-            background: radial-gradient(circle, rgba(0, 168, 255, 0.1) 0%, transparent 70%);
+            content: ''; position: absolute; width: 300%; height: 300%;
+            background: radial-gradient(circle, rgba(0,168,255,0.1) 0%, transparent 70%);
             animation: pulse 15s infinite linear;
         }
-
-        @keyframes pulse {
-            0% { transform: translate(-50%, -50%) rotate(0deg); }
-            100% { transform: translate(-50%, -50%) rotate(360deg); }
-        }
+        @keyframes pulse { 0%{transform:translate(-50%,-50%) rotate(0)} 100%{transform:translate(-50%,-50%) rotate(360deg)} }
 
         .cover h1 {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 4.5rem;
-            margin-bottom: 15px;
-            font-weight: 900;
-            letter-spacing: 4px;
-            background: linear-gradient(90deg, #00a8ff, #00fff2, #9d4edd);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            text-shadow: 0 0 20px rgba(0, 168, 255, 0.5);
-            position: relative;
-            z-index: 2;
-        } 
-
+            font-family:'Orbitron',sans-serif; font-size:4.5rem; margin-bottom:15px; font-weight:900; letter-spacing:4px;
+            background:linear-gradient(90deg,#00a8ff,#00fff2,#9d4edd); -webkit-background-clip:text; -webkit-text-fill-color:transparent;
+            text-shadow:0 0 20px rgba(0,168,255,0.5); position:relative; z-index:2;
+        }
         .cover h3 {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 2.5rem;
-            margin-bottom: 15px;
-            font-weight: 900;
-            letter-spacing: 4px;
-            background: linear-gradient(90deg, #fbff00, #fd0202, #fbff00);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            text-shadow: 0 0 20px rgba(0, 168, 255, 0.5);
-            position: relative;
-            z-index: 2;
+            font-family:'Orbitron',sans-serif; font-size:2.5rem; margin-bottom:15px; font-weight:900; letter-spacing:4px;
+            background:linear-gradient(90deg,#fbff00,#fd0202,#fbff00); -webkit-background-clip:text; -webkit-text-fill-color:transparent;
+            text-shadow:0 0 20px rgba(0,168,255,0.5); position:relative; z-index:2;
         }
-        /* --- SLIDESHOW AUTOMATICO IN COPERTINA --- */
-.cover-slideshow {
-  position: relative;
-  width: 90%;
-  max-width: 900px;
-  height: 380px;
-  margin: 30px auto 40px;
-  overflow: hidden;
-  border-radius: 12px;
-  box-shadow: 0 0 30px rgba(0,168,255,0.25);
-  border: 1px solid rgba(0,168,255,0.3);
-}
+        .cover .subtitle { font-size:1.5rem; margin-bottom:30px; opacity:.9; max-width:600px; position:relative; z-index:2; font-weight:300; }
 
-.cover-slideshow img {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  opacity: 0;
-  transition: opacity 1s ease-in-out;
-  border-radius: 12px;
-}
-
-.cover-slideshow img.active {
-  opacity: 1;
-}
-
-.cover-slideshow:hover img {
-  animation-play-state: paused;
-}
-
-@media (max-width: 768px) {
-  .cover-slideshow {
-    height: 250px;
-  }
-}
-
-
-        .cover .subtitle {
-            font-size: 1.5rem;
-            margin-bottom: 30px;
-            opacity: 0.9;
-            max-width: 600px;
-            position: relative;
-            z-index: 2;
-            font-weight: 300;
+        /* --- SLIDESHOW COPERTINA (immagini contenute + controlli) --- */
+        .cover-slideshow {
+          position: relative; width: 90%; max-width: 900px; height: 320px;
+          margin: 30px auto 40px; overflow: hidden; border-radius: 12px;
+          box-shadow: 0 0 30px rgba(0,168,255,0.25); border: 1px solid rgba(0,168,255,0.3);
+          background: rgba(0,20,40,0.7);
         }
+        .cover-slideshow img {
+          position: absolute; top: 50%; left: 50%; width: 100%; height: 100%;
+          object-fit: contain; transform: translate(-50%, -50%);
+          opacity: 0; transition: opacity 1s ease-in-out; border-radius: 12px;
+        }
+        .cover-slideshow img.active { opacity: 1; }
+        .slide-arrow {
+          position: absolute; top: 50%; transform: translateY(-50%); font-size: 1.9rem;
+          color: #00fff2; background: rgba(0,0,0,0.4); border: none; cursor: pointer;
+          padding: 8px 12px; border-radius: 6px; z-index: 10; transition: all .3s;
+        }
+        .slide-arrow:hover { background: rgba(0,0,0,0.7); color: #fff; }
+        .slide-prev{ left: 10px; } .slide-next{ right: 10px; }
 
-        /* Nuovo container interattivo per la copertina */
+        .slide-dots{ position:absolute; bottom:10px; left:50%; transform:translateX(-50%); display:flex; gap:8px; z-index:10; }
+        .slide-dots span{ width:10px; height:10px; border-radius:50%; background:rgba(255,255,255,0.4); cursor:pointer; transition:background .3s; }
+        .slide-dots span.active{ background:#00fff2; }
+
+        @media (max-width:768px){ .cover-slideshow{ height: 230px; } .slide-arrow{ font-size:1.5rem; } }
+
+        /* Contenitore video cover */
         .media-interactive-container {
-            position: relative;
-            width: 90%;
-            max-width: 800px;
-            height: 50vh;
-            min-height: 400px;
-            margin: 20px auto;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 0 30px rgba(0, 168, 255, 0.2);
-            cursor: pointer; 
-            border: 1px solid rgba(0, 168, 255, 0.3);
+            position: relative; width: 90%; max-width: 800px; height: 50vh; min-height: 400px;
+            margin: 20px auto; border-radius: 10px; overflow: hidden; box-shadow: 0 0 30px rgba(0,168,255,0.2);
+            cursor: pointer; border: 1px solid rgba(0,168,255,0.3);
         }
-
         .media-interactive-container img, .media-interactive-container video {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: opacity 0.5s;
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; transition: opacity .5s;
         }
-
-        .media-interactive-container img {
-            z-index: 10;
-            opacity: 1; 
-        }
-
-        .media-interactive-container video {
-            z-index: 5;
-            opacity: 0; 
-        }
-        
+        .media-interactive-container img { z-index:10; opacity:1; }
+        .media-interactive-container video { z-index:5; opacity:0; }
         .media-interactive-container::before {
-            content: '';
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(45deg, transparent 40%, rgba(0, 168, 255, 0.1) 50%, transparent 60%);
-            animation: shine 3s infinite linear;
-            pointer-events: none;
-            z-index: 16;
+            content:''; position:absolute; width:100%; height:100%;
+            background: linear-gradient(45deg, transparent 40%, rgba(0,168,255,0.1) 50%, transparent 60%);
+            animation: shine 3s infinite linear; pointer-events:none; z-index:16;
         }
-
-        @keyframes shine {
-            0% { transform: translateX(-100%); }
-            100% { transform: translateX(100%); }
-        }
-
+        @keyframes shine { 0%{transform:translateX(-100%)} 100%{transform:translateX(100%)} }
         .video-placeholder-cover {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.5); 
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            color: white;
-            z-index: 15; 
-            transition: opacity 0.3s;
+            position:absolute; top:0; left:0; width:100%; height:100%;
+            background: rgba(0,0,0,0.5); display:flex; flex-direction:column; justify-content:center; align-items:center;
+            color:white; z-index:15; transition: opacity .3s;
+        }
+        .video-placeholder-cover i { font-size:5rem; color:#00fff2; margin-bottom:10px; text-shadow:0 0 20px rgba(0,255,242,0.7); }
+        .video-placeholder-cover p { font-family:'Orbitron',sans-serif; font-size:1.5rem; font-weight:700; color:#00a8ff; }
+
+        /* Pagine interne */
+        .media-container { width:90%; max-width:800px; height:50vh; min-height:400px; background:rgba(0,20,40,0.7);
+            border-radius:10px; margin:20px auto; display:flex; justify-content:center; align-items:center; color:rgba(0,168,255,0.7);
+            font-size:1.2rem; border:1px solid rgba(0,168,255,0.3); box-shadow:0 0 30px rgba(0,168,255,0.2); position:relative; z-index:2; overflow:hidden; }
+        .media-container img { width:auto; max-width:100%; max-height:100%; object-fit:contain; }
+        .media-container video { width:100%; height:100%; object-fit:cover; border-radius:10px; }
+
+        .content-page { padding: 40px; }
+        .two-column { display:grid; grid-template-columns:1fr 1fr; gap:40px; align-items:center; }
+
+        .image-container{ width:100%; height:60vh; min-height:500px; background:rgba(0,20,40,0.7); border-radius:10px; display:flex; justify-content:center; align-items:center;
+            color:rgba(0,168,255,0.7); font-size:1.1rem; border:1px solid rgba(0,168,255,0.3); box-shadow:0 0 20px rgba(0,168,255,0.2); position:relative; overflow:hidden; cursor:zoom-in; }
+        .image-container img{ width:100%; height:100%; object-fit:contain; transition: opacity .3s; }
+        .zoom-img{ position:absolute; width:300%; height:300%; top:0; left:0; opacity:0; pointer-events:none; transform-origin:0 0; transition: opacity .3s; object-fit:cover; }
+        .image-container:hover .zoom-img{ opacity:1; }
+
+        .section-title{ color:#00a8ff; font-family:'Orbitron',sans-serif; font-size:2rem; margin-bottom:25px; font-weight:700; border-left:5px solid #00fff2; padding-left:15px; text-shadow:0 0 10px rgba(0,168,255,0.5); }
+        .highlight{ color:#00fff2; font-weight:600; }
+        .big-number{ font-family:'Orbitron',sans-serif; font-size:3rem; font-weight:800; background:linear-gradient(90deg,#00a8ff,#00fff2);
+            -webkit-background-clip:text; -webkit-text-fill-color:transparent; text-align:center; margin:20px 0; line-height:1; text-shadow:0 0 15px rgba(0,168,255,0.5); }
+        .big-number h1,.big-number h2{ font-size:inherit; margin:0; }
+
+        .feature-list{ list-style-type:none; }
+        .feature-list li{ margin-bottom:15px; padding-left:30px; position:relative; }
+        .feature-list li:before{ content:"▶"; color:#00fff2; font-weight:bold; position:absolute; left:0; font-size:1rem; }
+
+        .specs-grid{ display:grid; grid-template-columns:repeat(2,1fr); gap:20px; margin-top:20px; }
+        .spec-card{ background:rgba(0,30,60,0.5); padding:20px; border-radius:8px; border-left:4px solid #00a8ff; box-shadow:0 0 15px rgba(0,168,255,0.1); transition:transform .3s, box-shadow .3s; }
+        .spec-card:hover{ transform:translateY(-5px); box-shadow:0 5px 20px rgba(0,168,255,0.2); }
+        .spec-title{ font-weight:700; margin-bottom:8px; color:#00fff2; font-size:1.1rem; font-family:'Orbitron',sans-serif; }
+
+        .pagination{ display:flex; justify-content:center; margin-top:20px; gap:15px; }
+        .page-btn{ background:linear-gradient(90deg,#00a8ff,#0095e0); color:#0a0f1f; border:none; padding:12px 25px; border-radius:5px; cursor:pointer; font-weight:600; transition:all .3s;
+            font-family:'Orbitron',sans-serif; letter-spacing:1px; box-shadow:0 0 15px rgba(0,168,255,0.3); flex:1; max-width:200px; }
+        .page-btn:hover{ background:linear-gradient(90deg,#00fff2,#00a8ff); box-shadow:0 0 20px rgba(0,255,242,0.5); transform:translateY(-2px); }
+
+        .footer{ text-align:center; padding:25px; background:rgba(5,10,25,0.9); color:#a0a0c0; width:100%; max-width:1400px; border-radius:0 0 15px 15px; border-top:1px solid rgba(0,168,255,0.2); }
+
+        /* Pulsanti & modali */
+        .contact-btn{ position:fixed; bottom:90px; right:30px; background:linear-gradient(90deg,#068efd,#008bfd); color:#fff; border:none; padding:15px 25px; border-radius:50px; cursor:pointer; font-weight:700;
+            font-family:'Orbitron',sans-serif; letter-spacing:1px; box-shadow:0 0 20px rgba(78,188,221,0.5); z-index:1000; transition:all .3s; }
+        .contact-btn:hover{ background:linear-gradient(90deg,#7dcbff,#4e80dd); box-shadow:0 0 25px rgba(125,196,255,0.7); transform:translateY(-3px); }
+
+        .preorder-btn{ position:fixed; bottom:30px; right:30px; background:linear-gradient(90deg,#ff8c00,#ff6347); color:#fff; border:none; padding:15px 25px; border-radius:50px; cursor:pointer; font-weight:700; font-family:'Orbitron',sans-serif; letter-spacing:1px; box-shadow:0 0 20px rgba(255,140,0,0.5); z-index:1000; transition:all .3s; }
+        .preorder-btn:hover{ background:linear-gradient(90deg,#ffb84d,#ff8c00); box-shadow:0 0 25px rgba(255,184,77,0.7); transform:translateY(-3px); }
+
+        .contact-modal,.preorder-modal{ display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(5,10,25,0.95); z-index:2000; justify-content:center; align-items:center; }
+        .modal-content{ background:linear-gradient(135deg,#0c1b33 0%,#1a1a2e 100%); padding:40px; border-radius:15px; max-width:500px; width:90%; box-shadow:0 0 40px rgba(0,168,255,0.3); border:1px solid rgba(0,168,255,0.3); position:relative; }
+        .close-modal{ position:absolute; top:15px; right:20px; font-size:1.5rem; color:#00a8ff; cursor:pointer; transition:color .3s; }
+        .close-modal:hover{ color:#00fff2; }
+        .contact-title,.preorder-title{ font-family:'Orbitron',sans-serif; font-size:1.8rem; margin-bottom:20px; color:#00fff2; text-align:center; }
+        .preorder-title{ color:#ff8c00; }
+        .company-name{ font-family:'Orbitron',sans-serif; font-size:1.3rem; margin-bottom:20px; color:#00a8ff; text-align:center; }
+        .contact-item{ margin-bottom:15px; padding-left:30px; position:relative; }
+        .contact-item i{ position:absolute; left:0; top:3px; color:#00fff2; font-size:1.2rem; }
+
+        .preorder-form label{ display:block; margin-bottom:5px; color:#00fff2; font-weight:500; }
+        .preorder-form input,.preorder-form button{ width:100%; padding:10px; margin-bottom:15px; border-radius:5px; border:1px solid rgba(0,168,255,0.3); background:rgba(0,30,60,0.8); color:#e0e0e0; font-size:1rem; }
+        .preorder-form input:focus{ outline:none; border-color:#00fff2; box-shadow:0 0 10px rgba(0,255,242,0.3); }
+        .preorder-form button{ background:linear-gradient(90deg,#ff8c00,#ff6347); color:#fff; font-weight:700; cursor:pointer; transition:background .3s; }
+        .preorder-form button:hover{ background:linear-gradient(90deg,#ffb84d,#ff8c00); }
+
+        .full-image-section{ display:flex; flex-direction:column; align-items:center; padding:40px; }
+        .instructions{ background:rgba(0,30,60,0.5); padding:25px; border-radius:10px; margin-top:20px; border-left:4px solid #00fff2; }
+        .instructions ol{ margin-left:20px; margin-top:10px; } .instructions li{ margin-bottom:10px; }
+
+        .cover h3{ font-size:1.5rem; }
+
+        @media (max-width:768px){
+          .two-column{ grid-template-columns:1fr; }
+          .big-number h2{ font-size:1.5rem; }
+          .cover h1{ font-size:3.5rem; }
+          .specs-grid{ grid-template-columns:1fr; }
+          .content-page{ padding:30px; }
+          .cover h3{ font-size:1.5rem; }
+          .contact-btn{ bottom:80px; right:20px; padding:10px 20px; font-size:.8rem; }
+          .preorder-btn{ bottom:20px; right:20px; padding:10px 20px; font-size:.8rem; }
+          .media-container,.image-container,.media-interactive-container{ height:50vh; min-height:300px; }
+          .pagination{ flex-direction:column; align-items:center; }
+          .page-btn{ max-width:250px; width:100%; }
         }
 
-        .video-placeholder-cover i {
-            font-size: 5rem;
-            color: #00fff2;
-            margin-bottom: 10px;
-            text-shadow: 0 0 20px rgba(0, 255, 242, 0.7);
-        }
+        .page-indicator{ text-align:center; margin:10px 0; color:#00a8ff; font-family:'Orbitron',sans-serif; }
 
-        .video-placeholder-cover p {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: #00a8ff;
-        }
-        /* FINE NUOVO CONTAINER COPERTINA */
+        .logo-top{ position:absolute; top:20px; right:20px; z-index:20; width:120px; filter: drop-shadow(0 0 10px rgba(0,255,242,0.6)); }
+        .page::after{ content:''; position:absolute; bottom:15px; right:15px; width:120px; height:120px; background:url('IKKI_Solution.png') no-repeat center; background-size:contain; opacity:0.08; pointer-events:none; }
 
-        /* Stili per le altre pagine */
-        .media-container {
-            width: 90%;
-            max-width: 800px;
-            height: 50vh;
-            min-height: 400px;
-            background: rgba(0, 20, 40, 0.7);
-            border-radius: 10px;
-            margin: 20px auto;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: rgba(0, 168, 255, 0.7);
-            font-size: 1.2rem;
-            border: 1px solid rgba(0, 168, 255, 0.3);
-            box-shadow: 0 0 30px rgba(0, 168, 255, 0.2);
-            position: relative;
-            z-index: 2;
-            overflow: hidden;
+        @media (max-width:768px){
+          body{ background-size:120px,120px; background-position:left 10px center, right 10px center; background-attachment:scroll; }
+          .logo-top{ width:80px; top:10px; left:10px; }
+          .page::after{ width:70px; height:70px; opacity:0.1; }
         }
-
-        .media-container img {
-            width: auto;
-            max-width: 100%;
-            max-height: 100%;
-            object-fit: contain;
-        }
-
-        .media-container video {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            border-radius: 10px;
-        }
-        
-        .content-page {
-            padding: 40px;
-        }
-
-        .two-column {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-            align-items: center;
-        }
-
-        /* Modifiche per lo zoom */
-        .image-container {
-            width: 100%;
-            height: 60vh;
-            min-height: 500px;
-            background: rgba(0, 20, 40, 0.7);
-            border-radius: 10px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: rgba(0, 168, 255, 0.7);
-            font-size: 1.1rem;
-            border: 1px solid rgba(0, 168, 255, 0.3);
-            box-shadow: 0 0 20px rgba(0, 168, 255, 0.2);
-            position: relative;
-            overflow: hidden; /* Nasconde l'immagine zoomata all'esterno */
-            cursor: zoom-in; /* Indica all'utente l'interazione */
-        }
-
-        .image-container img {
-            width: 100%; /* L'immagine di base occupa tutto lo spazio */
-            height: 100%;
-            object-fit: contain;
-            transition: opacity 0.3s;
-        }
-        
-        .zoom-img {
-            position: absolute;
-            width: 300%; /* Fattore di zoom (3x) */
-            height: 300%;
-            top: 0;
-            left: 0;
-            opacity: 0;
-            pointer-events: none; /* Ignora il mouse per non interferire con il contenitore */
-            transform-origin: 0 0;
-            transition: opacity 0.3s;
-            object-fit: cover; /* Usa cover per riempire l'area 3x3 */
-        }
-        
-        .image-container:hover .zoom-img {
-            opacity: 1; /* Mostra l'immagine ingrandita al passaggio del mouse */
-        }
-        /* Fine modifiche zoom */
-
-        .section-title {
-            color: #00a8ff;
-            font-family: 'Orbitron', sans-serif;
-            font-size: 2rem;
-            margin-bottom: 25px;
-            font-weight: 700;
-            border-left: 5px solid #00fff2;
-            padding-left: 15px;
-            text-shadow: 0 0 10px rgba(0, 168, 255, 0.5);
-        }
-
-        .highlight {
-            color: #00fff2;
-            font-weight: 600;
-        }
-
-        .big-number {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 3rem;
-            font-weight: 800;
-            background: linear-gradient(90deg, #00a8ff, #00fff2);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            text-align: center;
-            margin: 20px 0;
-            line-height: 1;
-            text-shadow: 0 0 15px rgba(0, 168, 255, 0.5);
-        }
-        
-        .big-number h1, .big-number h2 {
-            /* Per assicurare che il testo all'interno di big-number erediti lo stile */
-            font-size: inherit; 
-            margin: 0;
-        }
-
-
-        .feature-list {
-            list-style-type: none;
-        }
-
-        .feature-list li {
-            margin-bottom: 15px;
-            padding-left: 30px;
-            position: relative;
-        }
-
-        .feature-list li:before {
-            content: "▶";
-            color: #00fff2;
-            font-weight: bold;
-            position: absolute;
-            left: 0;
-            font-size: 1rem;
-        }
-
-        .specs-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 20px;
-            margin-top: 20px;
-        }
-
-        .spec-card {
-            background: rgba(0, 30, 60, 0.5);
-            padding: 20px;
-            border-radius: 8px;
-            border-left: 4px solid #00a8ff;
-            box-shadow: 0 0 15px rgba(0, 168, 255, 0.1);
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-
-        .spec-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 5px 20px rgba(0, 168, 255, 0.2);
-        }
-
-        .spec-title {
-            font-weight: 700;
-            margin-bottom: 8px;
-            color: #00fff2;
-            font-size: 1.1rem;
-            font-family: 'Orbitron', sans-serif;
-        }
-
-        .pagination {
-            display: flex;
-            justify-content: center;
-            margin-top: 20px;
-            gap: 15px;
-        }
-
-        .page-btn {
-            background: linear-gradient(90deg, #00a8ff, #0095e0);
-            color: #0a0f1f;
-            border: none;
-            padding: 12px 25px;
-            border-radius: 5px;
-            cursor: pointer;
-            font-weight: 600;
-            transition: all 0.3s;
-            font-family: 'Orbitron', sans-serif;
-            letter-spacing: 1px;
-            box-shadow: 0 0 15px rgba(0, 168, 255, 0.3);
-            flex: 1;
-            max-width: 200px;
-        }
-
-        .page-btn:hover {
-            background: linear-gradient(90deg, #00fff2, #00a8ff);
-            box-shadow: 0 0 20px rgba(0, 255, 242, 0.5);
-            transform: translateY(-2px);
-        }
-
-        .footer {
-            text-align: center;
-            padding: 25px;
-            background: rgba(5, 10, 25, 0.9);
-            color: #a0a0c0;
-            width: 100%;
-            max-width: 1400px;
-            border-radius: 0 0 15px 15px;
-            border-top: 1px solid rgba(0, 168, 255, 0.2);
-        }
-
-        /* Pulsante e modale CONTATTI */
-        .contact-btn {
-            position: fixed;
-            bottom: 90px;
-            right: 30px;
-            background: linear-gradient(90deg, #068efd, #008bfd);
-            color: white;
-            border: none;
-            padding: 15px 25px;
-            border-radius: 50px;
-            cursor: pointer;
-            font-weight: 700;
-            font-family: 'Orbitron', sans-serif;
-            letter-spacing: 1px;
-            box-shadow: 0 0 20px rgba(78, 188, 221, 0.5);
-            z-index: 1000;
-            transition: all 0.3s;
-        }
-
-        .contact-btn:hover {
-            background: linear-gradient(90deg, #7dcbff, #4e80dd);
-            box-shadow: 0 0 25px rgba(125, 196, 255, 0.7);
-            transform: translateY(-3px);
-        }
-        
-        /* Pulsante e modale ORDINA ORA (NUOVO) */
-        .preorder-btn {
-            position: fixed;
-            bottom: 30px; 
-            right: 30px;
-            background: linear-gradient(90deg, #ff8c00, #ff6347); 
-            color: white;
-            border: none;
-            padding: 15px 25px;
-            border-radius: 50px;
-            cursor: pointer;
-            font-weight: 700;
-            font-family: 'Orbitron', sans-serif;
-            letter-spacing: 1px;
-            box-shadow: 0 0 20px rgba(255, 140, 0, 0.5);
-            z-index: 1000;
-            transition: all 0.3s;
-        }
-
-        .preorder-btn:hover {
-            background: linear-gradient(90deg, #ffb84d, #ff8c00);
-            box-shadow: 0 0 25px rgba(255, 184, 77, 0.7);
-            transform: translateY(-3px);
-        }
-
-        .contact-modal, .preorder-modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(5, 10, 25, 0.95);
-            z-index: 2000;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .modal-content {
-            background: linear-gradient(135deg, #0c1b33 0%, #1a1a2e 100%);
-            padding: 40px;
-            border-radius: 15px;
-            max-width: 500px;
-            width: 90%;
-            box-shadow: 0 0 40px rgba(0, 168, 255, 0.3);
-            border: 1px solid rgba(0, 168, 255, 0.3);
-            position: relative;
-        }
-
-        .close-modal {
-            position: absolute;
-            top: 15px;
-            right: 20px;
-            font-size: 1.5rem;
-            color: #00a8ff;
-            cursor: pointer;
-            transition: color 0.3s;
-        }
-
-        .close-modal:hover {
-            color: #00fff2;
-        }
-
-        .contact-title, .preorder-title {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 1.8rem;
-            margin-bottom: 20px;
-            color: #00fff2;
-            text-align: center;
-        }
-        
-        .preorder-title {
-            color: #ff8c00;
-        }
-
-        .company-name {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 1.3rem;
-            margin-bottom: 20px;
-            color: #00a8ff;
-            text-align: center;
-        }
-
-        .contact-info {
-            margin-top: 20px;
-        }
-
-        .contact-item {
-            margin-bottom: 15px;
-            padding-left: 30px;
-            position: relative;
-        }
-
-        .contact-item i {
-            position: absolute;
-            left: 0;
-            top: 3px;
-            color: #00fff2;
-            font-size: 1.2rem;
-        }
-        
-        .preorder-form label {
-            display: block;
-            margin-bottom: 5px;
-            color: #00fff2;
-            font-weight: 500;
-        }
-
-        .preorder-form input, .preorder-form button {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 15px;
-            border-radius: 5px;
-            border: 1px solid rgba(0, 168, 255, 0.3);
-            background: rgba(0, 30, 60, 0.8);
-            color: #e0e0e0;
-            font-size: 1rem;
-        }
-
-        .preorder-form input:focus {
-            outline: none;
-            border-color: #00fff2;
-            box-shadow: 0 0 10px rgba(0, 255, 242, 0.3);
-        }
-
-        .preorder-form button {
-            background: linear-gradient(90deg, #ff8c00, #ff6347);
-            color: white;
-            font-weight: 700;
-            cursor: pointer;
-            transition: background 0.3s;
-        }
-
-        .preorder-form button:hover {
-            background: linear-gradient(90deg, #ffb84d, #ff8c00);
-        }
-        
-        /* Fine ORDINA Ora */
-
-        .full-image-section {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 40px;
-        }
-
-        .instructions {
-            background: rgba(0, 30, 60, 0.5);
-            padding: 25px;
-            border-radius: 10px;
-            margin-top: 20px;
-            border-left: 4px solid #00fff2;
-        }
-
-        .instructions ol {
-            margin-left: 20px;
-            margin-top: 10px;
-        }
-
-        .instructions li {
-            margin-bottom: 10px;
-        }
-        
-        .cover h3 {
-            font-size: 1.5rem;
-        }
-            
-
-        @media (max-width: 768px) {
-            .two-column {
-                grid-template-columns: 1fr;
-            }
-            .big-number h2 {
-                font-size: 1.5rem; /* Riduce la dimensione del carattere del titolo all'interno di .big-number per mobile */
-            }
-            
-            .cover h1 {
-                font-size: 3.5rem; /* Aumento leggero per h1 della copertina */
-            }
-
-            .specs-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .content-page {
-                padding: 30px;
-            }
-            
-            .cover h3 {
-                font-size: 1.5rem;
-            }
-            
-            
-            .contact-btn {
-                bottom: 80px;
-                right: 20px;
-                padding: 10px 20px;
-                font-size: 0.8rem;
-            }
-            
-            .preorder-btn {
-                bottom: 20px;
-                right: 20px;
-                padding: 10px 20px;
-                font-size: 0.8rem;
-            }
-            
-            .media-container, .image-container, .media-interactive-container {
-                height: 50vh;
-                min-height: 300px;
-            }
-            
-            .pagination {
-                flex-direction: column;
-                align-items: center;
-            }
-            
-            .page-btn {
-                max-width: 250px;
-                width: 100%;
-            }
-        }
-
-        .page-indicator {
-            text-align: center;
-            margin: 10px 0;
-            color: #00a8ff;
-            font-family: 'Orbitron', sans-serif;
-        }
-    
-    .logo-top {
-      position: absolute;
-      top: 20px;
-      right: 20px;
-      z-index: 20;
-      width: 120px;
-      filter: drop-shadow(0 0 10px rgba(0, 255, 242, 0.6));
-    }
-
-    .page::after {
-      content: '';
-      position: absolute;
-      bottom: 15px;
-      right: 15px;
-      width: 120px;
-      height: 120px;
-      background: url('IKKI_Solution.png') no-repeat center;
-      background-size: contain;
-      opacity: 0.08;
-      pointer-events: none;
-    }
-
-    @media (max-width: 768px) {
-      body {
-        background-size: 120px, 120px;
-        background-position: left 10px center, right 10px center;
-        background-attachment: scroll;
-      }
-      .logo-top {
-        width: 80px;
-        top: 10px;
-        left: 10px;
-      }
-      .page::after {
-        width: 70px;
-        height: 70px;
-        opacity: 0.1;
-      }
-    }
-
-</style>
+    </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
     <div class="brochure">
-    <img src="IKKI_Solution.png" alt="IKKI Solutions Logo" class="logo-top">
-        <div id="page1" class="page active">
-            <div class="cover">
-                <h1>C29</h1>
-                <p class="subtitle">Il più versatile in commercio</p>
-                <!-- SLIDESHOW AUTOMATICO -->
-<div class="cover-slideshow">
-  <img src="C29.2.png" alt="C29 Violent Fans - Dettaglio 1" class="slide active">
-  <img src="C29.3.png" alt="C29 Violent Fans - Dettaglio 2" class="slide">
-  <img src="C29.4.png" alt="C29 Violent Fans - Dettaglio 3" class="slide">
-  <img src="C29.5.png" alt="C29 Violent Fans - Dettaglio 4" class="slide">
-  <img src="C29.6.png" alt="C29 Violent Fans - Dettaglio 5" class="slide">
-  <img src="C29.7.png" alt="C29 Violent Fans - Dettaglio 6" class="slide">
-  <img src="C29.8.png" alt="C29 Violent Fans - Dettaglio 7" class="slide">
-  <img src="C29.10.png" alt="C29 Violent Fans - Dettaglio 8" class="slide">
-</div>
-                <div class="media-interactive-container" id="videoContainer">
-                    <img src="1.png" alt="C29 - Prodotto Completo">
-                    <video id="demoVideo" controls preload="none">
-                        <source src="C29.mp4" type="video/mp4">
-                        Il tuo browser non supporta il tag video.
-                    </video>
-                    <div class="video-placeholder-cover" id="videoPlaceholderCover">
-                        <i class="fas fa-play-circle"></i>
-                        <p>GUARDA IL VIDEO DIMOSTRATIVO</p>
-                    </div>
-                </div>
-                
-                <p>Clicca sul riquadro per avviare il video</p>
-                 <div class="big-number">
-                   <h1>ORDINA ora C29 a 49.90 per avere la seconda batteria in OMAGGIO!</h1>
-                   </div>
-                <div class="page-indicator">Pagina 1 di 10</div>
-            </div>
-        </div>
+      <img src="IKKI_Solution.png" alt="IKKI Solutions Logo" class="logo-top">
 
-        <div id="page2" class="page">
-            <div class="full-image-section">
-                <h2 class="section-title">PRESTAZIONI IMBATTIBILI</h2>
-                <div class="media-container">
-                    <img src="2.png" alt="C29 - Prodotto Completo">
-                </div>
-                <div style="max-width: 800px; text-align: center;">
-                    <h3 style="color: #00a8ff; margin-bottom: 15px; font-family: 'Orbitron', sans-serif;">MOTORE BRUSHLESS AD ALTA VELOCITÀ</h3>
-                    <div class="big-number">138.000 RPM</div>
-                    <p>Motore brushless ad alte prestazioni con velocità massima di <span class="highlight">138.000 giri al minuto</span>. Potente, affidabile e resistente, garantisce prestazioni elevate e durature senza rischio di surriscaldamento anche sotto carichi intensi.</p>
-                    
-                    <ul class="feature-list" style="text-align: left; margin-top: 20px;">
-                        <li>Genera un flusso d'aria potente</li>
-                        <li>Tre livelli di regolazione della velocità</li>
-                        <li>Nessun rischio di surriscaldamento</li>
-                        <li>Prestazioni durature nel tempo</li>
-                    </ul>
-                </div>
-                <div class="page-indicator">Pagina 2 di 10</div>
-            </div>
-        </div>
+      <!-- PAGINA 1 -->
+      <div id="page1" class="page active">
+        <div class="cover">
+          <h1>C29</h1>
+          <p class="subtitle">Il più versatile in commercio</p>
 
-        <div id="page3" class="page">
-            <div class="content-page">
-                <h2 class="section-title">AUTONOMIA E RICARICA</h2>
-                
-                <div class="two-column">
-                    <div>
-                        <h3 style="color: #00a8ff; margin-bottom: 15px; font-family: 'Orbitron', sans-serif;">BATTERIA CAPIENTE E SOSTITUIBILE</h3>
-                        <div class="big-number">8000 mAh</div>
-                        <p>Batteria al litio ad alta capacità, rimovibile e sostituibile, garantisce un'autonomia extra lunga per sessioni di pulizia prolungate.</p>
-                        
-                        <div class="specs-grid">
-                            <div class="spec-card">
-                                <div class="spec-title">RICARICA RAPIDA 30W</div>
-                                <p>Tecnologia di ricarica rapida inversa da 30W per tempi di attesa minimi.</p>
-                            </div>
-                            <div class="spec-card">
-                                <div class="spec-title">FACILE SOSTITUZIONE</div>
-                                <p>Batteria rimovibile con sistema di sgancio rapido e sicuro.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div>
-                        <div class="image-container">
-                            <img src="3.png" alt="Batteria Sostituibile">
-                        </div>
-                    </div>
-                </div>
-                <div class="page-indicator">Pagina 3 di 10</div>
-            </div>
-        </div>
+          <!-- SLIDESHOW AUTOMATICO + CONTROLLI -->
+          <div class="cover-slideshow">
+            <button class="slide-arrow slide-prev" aria-label="Slide precedente"><i class="fas fa-chevron-left"></i></button>
+            <button class="slide-arrow slide-next" aria-label="Slide successiva"><i class="fas fa-chevron-right"></i></button>
 
-        <div id="page4" class="page">
-            <div class="content-page">
-                <h2 class="section-title">VERSATILITÀ E PRATICITÀ</h2>
-                
-                <div class="two-column">
-                    <div>
-                        <div class="image-container">
-                            <img src="4.png" alt="Funzione Aspiratore">
-                        </div>
-                    </div>
-                    <div>
-                        <h3 style="color: #00a8ff; margin-bottom: 15px; font-family: 'Orbitron', sans-serif;">DIVENTA FACILMENTE UN ASPIRATORE</h3>
-                        <p>C29 si trasforma facilmente in un aspiratore potente e versatile, pronto per ogni esigenza di pulizia.</p>
-                        
-                        <div class="specs-grid">
-                            <div class="spec-card">
-                                <div class="spec-title">GRANDE POTENZA ASPIRANTE</div>
-                                <p>Il potente motore brushless, genera fino a 245w di potenza.</p>
-                            </div>
-                            <div class="spec-card">
-                                <div class="spec-title">HAIPA LAVABILE PIÙ VOLTE</div>
-                                <p>Il filtro Haipa può essere lavato direttamente con acqua più volte per un uso pratico e igienico, garantendo prestazioni costanti nel tempo.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <img src="C29.2.png" alt="C29 - Dettaglio 1" class="slide active">
+            <img src="C29.3.png" alt="C29 - Dettaglio 2" class="slide">
+            <img src="C29.4.png" alt="C29 - Dettaglio 3" class="slide">
+            <img src="C29.5.png" alt="C29 - Dettaglio 4" class="slide">
+            <img src="C29.6.png" alt="C29 - Dettaglio 5" class="slide">
+            <img src="C29.7.png" alt="C29 - Dettaglio 6" class="slide">
+            <img src="C29.8.png" alt="C29 - Dettaglio 7" class="slide">
+            <img src="C29.10.png" alt="C29 - Dettaglio 8" class="slide">
 
-                <div class="page-indicator">Pagina 4 di 10</div>
-            </div>
-        </div>
+            <div class="slide-dots" aria-label="Indicatori slide"></div>
+          </div>
 
-        <div id="page5" class="page">
-            <div class="full-image-section">
-                <h2 class="section-title">SPECIFICHE TECNICHE</h2>
-                <div class="media-container">
-                    <img src="5.png" alt="C29 - Prodotto Completo">
-                </div>
-                <div style="max-width: 800px;">
-                    <div class="specs-grid">
-                        <div class="spec-card">
-                            <div class="spec-title">VELOCITÀ MASSIMA</div>
-                            <p>138.000 RPM</p>
-                        </div>
-                        <div class="spec-card">
-                            <div class="spec-title">CAPACITÀ BATTERIA</div>
-                            <p>8000 mAh</p>
-                        </div>
-                        <div class="spec-card">
-                            <div class="spec-title">PRESSIONE VENTO</div>
-                            <p>300g</p>
-                        </div>
-                        <div class="spec-card">
-                            <div class="spec-title">RICARICA RAPIDA</div>
-                            <p>30W</p>
-                        </div>
-                        <div class="spec-card">
-                            <div class="spec-title">TIPO MOTORE</div>
-                            <p>Brushless</p>
-                        </div>
-                        <div class="spec-card">
-                            <div class="spec-title">FILTRO</div>
-                            <p>Haipa lavabile</p>
-                        </div>
-                        <div class="spec-card">
-                            <div class="spec-title">FUNZIONI</div>
-                            <p>Aspirazione, soffiaggio</p>
-                        </div>
-                        <div class="spec-card">
-                            <div class="spec-title">ILLUMINAZIONE</div>
-                            <p>LED integrato</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="page-indicator">Pagina 5 di 10</div>
+          <div class="media-interactive-container" id="videoContainer">
+            <img src="1.png" alt="C29 - Prodotto Completo">
+            <video id="demoVideo" controls preload="none">
+              <source src="C29.mp4" type="video/mp4"> Il tuo browser non supporta il tag video.
+            </video>
+            <div class="video-placeholder-cover" id="videoPlaceholderCover">
+              <i class="fas fa-play-circle"></i>
+              <p>GUARDA IL VIDEO DIMOSTRATIVO</p>
             </div>
-        </div>
+          </div>
 
-        <div id="page6" class="page">
-            <div class="content-page">
-                <h2 class="section-title">BATTERIA SOSTITUIBILE</h2>
-                
-                <div class="two-column">
-                    <div>
-                        <div class="image-container">
-                            <img src="6.png" alt="Batteria Sostituibile - Istruzioni">
-                        </div>
-                    </div>
-                    <div>
-                        <h3 style="color: #00a8ff; margin-bottom: 15px; font-family: 'Orbitron', sans-serif;">SOSTITUZIONE RAPIDA E SEMPLICE</h3>
-                        <p>Il sistema di batteria sostituibile di C29 ti permette di continuare a lavorare senza interruzioni. Basta pochi secondi per sostituire la batteria e tornare alla massima potenza.</p>
-                        
-                        <div class="instructions">
-                            <h4 style="color: #00fff2; margin-bottom: 10px;">Istruzioni per la sostituzione:</h4>
-                            <ol>
-                                <li>Premi il pulsante di sblocca</li>
-                                <li>Rimuovi la batteria esaurita</li>
-                                <li>Inserisci la batteria carica</li>
-                                <li>Sentirai un click che conferma il blocco</li>
-                            </ol>
-                        </div>
-                        
-                        <div class="specs-grid" style="margin-top: 20px;">
-                            <div class="spec-card">
-                                <div class="spec-title">TEMPO DI SOSTITUZIONE</div>
-                                <p>Meno di 10 secondi</p>
-                            </div>
-                            <div class="spec-card">
-                                <div class="spec-title">SICUREZZA</div>
-                                <p>Sistema di blocco sicuro</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                  <div class="big-number">
-                   <h2>ORDINA ora C29 per avere la seconda batteria in OMAGGIO!</h2>
-                   </div>
-                <div class="page-indicator">Pagina 6 di 10</div>
-            </div>
+          <p>Clicca sul riquadro per avviare il video</p>
+          <div class="big-number"><h1>ORDINA ora C29 a 49.90 per avere la seconda batteria in OMAGGIO!</h1></div>
+          <div class="page-indicator">Pagina 1 di 10</div>
         </div>
+      </div>
 
-        <div id="page7" class="page">
-            <div class="full-image-section">
-                <h2 class="section-title">BATTERIA AD ALTA CAPACITÀ</h2>
-                <div class="media-container">
-                    <img src="7.png" alt="Batteria Capiente">
-                </div>
-                <div style="max-width: 800px; text-align: center;">
-                    <h3 style="color: #00a8ff; margin-bottom: 15px; font-family: 'Orbitron', sans-serif;">AUTONOMIA EXTRA LUNGA</h3>
-                    <div class="big-number">8000 mAh</div>
-                    <p>La batteria ad alta capacità da 8000 mAh garantisce sessioni di lavoro prolungate senza necessità di ricarica frequente. Ideale per professionisti che necessitano di prestazioni continue.</p>
-                    
-                    <div class="specs-grid" style="margin-top: 30px;">
-                        <div class="spec-card">
-                            <div class="spec-title">DURATA MEDIA</div>
-                            <p>Fino a 45 minuti di uso continuo</p>
-                        </div>
-                        <div class="spec-card">
-                            <div class="spec-title">TECNOLOGIA</div>
-                            <p>Litio-polimero ad alta densità</p>
-                        </div>
-                        <div class="spec-card">
-                            <div class="spec-title">CICLI DI RICARICA</div>
-                            <p>Oltre 500 cicli completi</p>
-                        </div><div class="spec-card">
-                            <div class="spec-title">CAPACITÀ DELLA BATTERIA</div>
-                            <p>Doppia 21700 da 4000mah</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="page-indicator">Pagina 7 di 10</div>
-            </div>
+      <!-- PAGINA 2 -->
+      <div id="page2" class="page">
+        <div class="full-image-section">
+          <h2 class="section-title">PRESTAZIONI IMBATTIBILI</h2>
+          <div class="media-container"><img src="2.png" alt="C29 - Prodotto Completo"></div>
+          <div style="max-width: 800px; text-align: center;">
+            <h3 style="color:#00a8ff;margin-bottom:15px;font-family:'Orbitron',sans-serif;">MOTORE BRUSHLESS AD ALTA VELOCITÀ</h3>
+            <div class="big-number">138.000 RPM</div>
+            <p>Motore brushless ad alte prestazioni con velocità massima di <span class="highlight">138.000 giri al minuto</span>. Potente, affidabile e resistente, garantisce prestazioni elevate e durature senza rischio di surriscaldamento anche sotto carichi intensi.</p>
+            <ul class="feature-list" style="text-align:left; margin-top:20px;">
+              <li>Genera un flusso d'aria potente</li>
+              <li>Tre livelli di regolazione della velocità</li>
+              <li>Nessun rischio di surriscaldamento</li>
+              <li>Prestazioni durature nel tempo</li>
+            </ul>
+          </div>
+          <div class="page-indicator">Pagina 2 di 10</div>
         </div>
+      </div>
 
-        <div id="page8" class="page">
-            <div class="content-page">
-                <h2 class="section-title">FILTRO HAIPA LAVABILE</h2>
-                
-                <div class="full-image-section">
-                    <div>
-                        <div class="media-container">
-                    <img src="8.png" alt="Filtro Lavabile">
-                </div>
-                        <h3 style="color: #00a8ff; margin-bottom: 15px; font-family: 'Orbitron', sans-serif;">MANUTENZIONE SEMPLICE E IGIENICA</h3>
-                        <p>Il sistema di filtrazione Haipa rappresenta l'innovazione nella manutenzione degli aspiratori. Progettato per essere lavato e riutilizzato più volte, garantisce prestazioni costanti nel tempo.</p>
-                        
-                        <div class="instructions">
-                            <h4 style="color: #00fff2; margin-bottom: 10px;">Vantaggi del filtro Haipa:</h4>
-                            <ul class="feature-list">
-                                <li>Lavabile con acqua corrente</li>
-                                <li>Asciugatura rapida</li>
-                                <li>Mantiene l'efficienza di filtrazione</li>
-                                <li>Riduzione dei costi di manutenzione</li>
-                                <li>Minore impatto ambientale</li>
-                            </ul>
-                        </div>
-                        
-                        <div class="specs-grid" style="margin-top: 20px;">
-                            <div class="spec-card">
-                                <div class="spec-title">CICLI DI LAVAGGIO</div>
-                                <p>Oltre 50 lavaggi senza perdita di efficienza</p>
-                            </div>
-                            <div class="spec-card">
-                                <div class="spec-title">MATERIALE</div>
-                                <p>Poliestere ad alta densità</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                </div>
-                <div class="page-indicator">Pagina 8 di 10</div>
+      <!-- PAGINA 3 -->
+      <div id="page3" class="page">
+        <div class="content-page">
+          <h2 class="section-title">AUTONOMIA E RICARICA</h2>
+          <div class="two-column">
+            <div>
+              <h3 style="color:#00a8ff;margin-bottom:15px;font-family:'Orbitron',sans-serif;">BATTERIA CAPIENTE E SOSTITUIBILE</h3>
+              <div class="big-number">8000 mAh</div>
+              <p>Batteria al litio ad alta capacità, rimovibile e sostituibile, garantisce un'autonomia extra lunga per sessioni di pulizia prolungate.</p>
+              <div class="specs-grid">
+                <div class="spec-card"><div class="spec-title">RICARICA RAPIDA 30W</div><p>Tecnologia di ricarica rapida inversa da 30W per tempi di attesa minimi.</p></div>
+                <div class="spec-card"><div class="spec-title">FACILE SOSTITUZIONE</div><p>Batteria rimovibile con sistema di sgancio rapido e sicuro.</p></div>
+              </div>
             </div>
+            <div><div class="image-container"><img src="3.png" alt="Batteria Sostituibile"></div></div>
+          </div>
+          <div class="page-indicator">Pagina 3 di 10</div>
         </div>
-        <div id="page9" class="page">
-            <div class="content-page">
-                <h2 class="section-title">VERSATILITÀ E PRATICITÀ</h2>
-                
-                <div class="two-column">
-                    <div>
-                        <div class="image-container">
-                            <img src="9.webp" alt="C29 - Prodotto Completo">
-                        </div>
-                    </div>
-                    <div>
-                        <h3 style="color: #00a8ff; margin-bottom: 15px; font-family: 'Orbitron', sans-serif;">DESIGN COMPATTO</h3>
-                        <p>C29 ha un design, solido, pratico e compatto offrendo il massimo della Versatilità.</p>
-                        
-                        <div class="specs-grid">
-                            <div class="spec-card">
-                                <div class="spec-title">PESO di 312gr</div>
-                                <p>La qualità dei materiali si sente anche solo prendendolo in mano.</p>
-                            </div>
-                            <div class="spec-card">
-                                <div class="spec-title">COLORAZIONE DINAMICA</div>
-                                <p>Colorazione sportiva e dinamica per un uso spensierato ed appagante.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="page-indicator">Pagina 9 di 10</div>
+      </div>
+
+      <!-- PAGINA 4 -->
+      <div id="page4" class="page">
+        <div class="content-page">
+          <h2 class="section-title">VERSATILITÀ E PRATICITÀ</h2>
+          <div class="two-column">
+            <div><div class="image-container"><img src="4.png" alt="Funzione Aspiratore"></div></div>
+            <div>
+              <h3 style="color:#00a8ff;margin-bottom:15px;font-family:'Orbitron',sans-serif;">DIVENTA FACILMENTE UN ASPIRATORE</h3>
+              <p>C29 si trasforma facilmente in un aspiratore potente e versatile, pronto per ogni esigenza di pulizia.</p>
+              <div class="specs-grid">
+                <div class="spec-card"><div class="spec-title">GRANDE POTENZA ASPIRANTE</div><p>Il potente motore brushless, genera fino a 245w di potenza.</p></div>
+                <div class="spec-card"><div class="spec-title">HAIPA LAVABILE PIÙ VOLTE</div><p>Il filtro Haipa può essere lavato direttamente con acqua più volte per un uso pratico e igienico, garantendo prestazioni costanti nel tempo.</p></div>
+              </div>
             </div>
-        </div><div id="page10" class="page">
-            <div class="content-page">
-                <h2 class="section-title">VERSATILITÀ E PRATICITÀ</h2>
-                
-                <div class="two-column">
-                    <div>
-                        <div class="image-container">
-                            <img src="10.webp" alt="Funzione Aspiratore">
-                        </div>
-                    </div>
-                    <div>
-                        <h3 style="color: #00a8ff; margin-bottom: 15px; font-family: 'Orbitron', sans-serif;">LED DI PRECISIONE</h3>
-                        <p>C29 è dotato di un led per aiutarti a scovare i punti più nascosti.</p>
-                        
-                        <div class="specs-grid">
-                            <div class="spec-card">
-                                <div class="spec-title">GRANDE POTENZA</div>
-                                <p>Versatilità completa in ogni situazione e per ogni necessità</p>
-                            </div>
-                            <div class="spec-card">
-                                <div class="spec-title">ILLUMINAZIONE LED</div>
-                                <p>LED integrato per una visione ottimale anche negli angoli più bui.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="big-number">
-                   <h2>ORDINA ora C29 per avere la seconda batteria in OMAGGIO!</h2>
-                   </div>
-                <div class="page-indicator">Pagina 10 di 10</div>
-                
-            </div>
+          </div>
+          <div class="page-indicator">Pagina 4 di 10</div>
         </div>
+      </div>
+
+      <!-- PAGINA 5 -->
+      <div id="page5" class="page">
+        <div class="full-image-section">
+          <h2 class="section-title">SPECIFICHE TECNICHE</h2>
+          <div class="media-container"><img src="5.png" alt="C29 - Prodotto Completo"></div>
+          <div style="max-width: 800px;">
+            <div class="specs-grid">
+              <div class="spec-card"><div class="spec-title">VELOCITÀ MASSIMA</div><p>138.000 RPM</p></div>
+              <div class="spec-card"><div class="spec-title">CAPACITÀ BATTERIA</div><p>8000 mAh</p></div>
+              <div class="spec-card"><div class="spec-title">PRESSIONE VENTO</div><p>300g</p></div>
+              <div class="spec-card"><div class="spec-title">RICARICA RAPIDA</div><p>30W</p></div>
+              <div class="spec-card"><div class="spec-title">TIPO MOTORE</div><p>Brushless</p></div>
+              <div class="spec-card"><div class="spec-title">FILTRO</div><p>Haipa lavabile</p></div>
+              <div class="spec-card"><div class="spec-title">FUNZIONI</div><p>Aspirazione, soffiaggio</p></div>
+              <div class="spec-card"><div class="spec-title">ILLUMINAZIONE</div><p>LED integrato</p></div>
+            </div>
+          </div>
+          <div class="page-indicator">Pagina 5 di 10</div>
+        </div>
+      </div>
+
+      <!-- PAGINA 6 -->
+      <div id="page6" class="page">
+        <div class="content-page">
+          <h2 class="section-title">BATTERIA SOSTITUIBILE</h2>
+          <div class="two-column">
+            <div><div class="image-container"><img src="6.png" alt="Batteria Sostituibile - Istruzioni"></div></div>
+            <div>
+              <h3 style="color:#00a8ff;margin-bottom:15px;font-family:'Orbitron',sans-serif;">SOSTITUZIONE RAPIDA E SEMPLICE</h3>
+              <p>Il sistema di batteria sostituibile di C29 ti permette di continuare a lavorare senza interruzioni. Basta pochi secondi per sostituire la batteria e tornare alla massima potenza.</p>
+              <div class="instructions">
+                <h4 style="color:#00fff2;margin-bottom:10px;">Istruzioni per la sostituzione:</h4>
+                <ol>
+                  <li>Premi il pulsante di sblocca</li>
+                  <li>Rimuovi la batteria esaurita</li>
+                  <li>Inserisci la batteria carica</li>
+                  <li>Sentirai un click che conferma il blocco</li>
+                </ol>
+              </div>
+              <div class="specs-grid" style="margin-top:20px;">
+                <div class="spec-card"><div class="spec-title">TEMPO DI SOSTITUZIONE</div><p>Meno di 10 secondi</p></div>
+                <div class="spec-card"><div class="spec-title">SICUREZZA</div><p>Sistema di blocco sicuro</p></div>
+              </div>
+            </div>
+          </div>
+          <div class="big-number"><h2>ORDINA ora C29 per avere la seconda batteria in OMAGGIO!</h2></div>
+          <div class="page-indicator">Pagina 6 di 10</div>
+        </div>
+      </div>
+
+      <!-- PAGINA 7 -->
+      <div id="page7" class="page">
+        <div class="full-image-section">
+          <h2 class="section-title">BATTERIA AD ALTA CAPACITÀ</h2>
+          <div class="media-container"><img src="7.png" alt="Batteria Capiente"></div>
+          <div style="max-width:800px; text-align:center;">
+            <h3 style="color:#00a8ff;margin-bottom:15px;font-family:'Orbitron',sans-serif;">AUTONOMIA EXTRA LUNGA</h3>
+            <div class="big-number">8000 mAh</div>
+            <p>La batteria ad alta capacità da 8000 mAh garantisce sessioni di lavoro prolungate senza necessità di ricarica frequente. Ideale per professionisti che necessitano di prestazioni continue.</p>
+            <div class="specs-grid" style="margin-top:30px;">
+              <div class="spec-card"><div class="spec-title">DURATA MEDIA</div><p>Fino a 45 minuti di uso continuo</p></div>
+              <div class="spec-card"><div class="spec-title">TECNOLOGIA</div><p>Litio-polimero ad alta densità</p></div>
+              <div class="spec-card"><div class="spec-title">CICLI DI RICARICA</div><p>Oltre 500 cicli completi</p></div>
+              <div class="spec-card"><div class="spec-title">CAPACITÀ DELLA BATTERIA</div><p>Doppia 21700 da 4000mah</p></div>
+            </div>
+          </div>
+          <div class="page-indicator">Pagina 7 di 10</div>
+        </div>
+      </div>
+
+      <!-- PAGINA 8 -->
+      <div id="page8" class="page">
+        <div class="content-page">
+          <h2 class="section-title">FILTRO HAIPA LAVABILE</h2>
+          <div class="full-image-section">
+            <div>
+              <div class="media-container"><img src="8.png" alt="Filtro Lavabile"></div>
+              <h3 style="color:#00a8ff;margin-bottom:15px;font-family:'Orbitron',sans-serif;">MANUTENZIONE SEMPLICE E IGIENICA</h3>
+              <p>Il sistema di filtrazione Haipa rappresenta l'innovazione nella manutenzione degli aspiratori. Progettato per essere lavato e riutilizzato più volte, garantisce prestazioni costanti nel tempo.</p>
+              <div class="instructions">
+                <h4 style="color:#00fff2;margin-bottom:10px;">Vantaggi del filtro Haipa:</h4>
+                <ul class="feature-list">
+                  <li>Lavabile con acqua corrente</li>
+                  <li>Asciugatura rapida</li>
+                  <li>Mantiene l'efficienza di filtrazione</li>
+                  <li>Riduzione dei costi di manutenzione</li>
+                  <li>Minore impatto ambientale</li>
+                </ul>
+              </div>
+              <div class="specs-grid" style="margin-top:20px;">
+                <div class="spec-card"><div class="spec-title">CICLI DI LAVAGGIO</div><p>Oltre 50 lavaggi senza perdita di efficienza</p></div>
+                <div class="spec-card"><div class="spec-title">MATERIALE</div><p>Poliestere ad alta densità</p></div>
+              </div>
+            </div>
+          </div>
+          <div class="page-indicator">Pagina 8 di 10</div>
+        </div>
+      </div>
+
+      <!-- PAGINA 9 -->
+      <div id="page9" class="page">
+        <div class="content-page">
+          <h2 class="section-title">VERSATILITÀ E PRATICITÀ</h2>
+          <div class="two-column">
+            <div><div class="image-container"><img src="9.webp" alt="C29 - Prodotto Completo"></div></div>
+            <div>
+              <h3 style="color:#00a8ff;margin-bottom:15px;font-family:'Orbitron',sans-serif;">DESIGN COMPATTO</h3>
+              <p>C29 ha un design, solido, pratico e compatto offrendo il massimo della Versatilità.</p>
+              <div class="specs-grid">
+                <div class="spec-card"><div class="spec-title">PESO di 312gr</div><p>La qualità dei materiali si sente anche solo prendendolo in mano.</p></div>
+                <div class="spec-card"><div class="spec-title">COLORAZIONE DINAMICA</div><p>Colorazione sportiva e dinamica per un uso spensierato ed appagante.</p></div>
+              </div>
+            </div>
+          </div>
+          <div class="page-indicator">Pagina 9 di 10</div>
+        </div>
+      </div>
+
+      <!-- PAGINA 10 -->
+      <div id="page10" class="page">
+        <div class="content-page">
+          <h2 class="section-title">VERSATILITÀ E PRATICITÀ</h2>
+          <div class="two-column">
+            <div><div class="image-container"><img src="10.webp" alt="Funzione Aspiratore"></div></div>
+            <div>
+              <h3 style="color:#00a8ff;margin-bottom:15px;font-family:'Orbitron',sans-serif;">LED DI PRECISIONE</h3>
+              <p>C29 è dotato di un led per aiutarti a scovare i punti più nascosti.</p>
+              <div class="specs-grid">
+                <div class="spec-card"><div class="spec-title">GRANDE POTENZA</div><p>Versatilità completa in ogni situazione e per ogni necessità</p></div>
+                <div class="spec-card"><div class="spec-title">ILLUMINAZIONE LED</div><p>LED integrato per una visione ottimale anche negli angoli più bui.</p></div>
+              </div>
+            </div>
+          </div>
+          <div class="big-number"><h2>ORDINA ora C29 per avere la seconda batteria in OMAGGIO!</h2></div>
+          <div class="page-indicator">Pagina 10 di 10</div>
+        </div>
+      </div>
     </div>
 
     <button class="contact-btn" onclick="openContactModal()">
         <i class="fas fa-comment-dots"></i> CONTATTACI
     </button>
-
     <button class="preorder-btn" onclick="openPreorderModal()">
         <i class="fas fa-cart-plus"></i> ORDINA ORA A 49.90 + "seconda batteria in omaggio"
     </button>
 
-
+    <!-- MODALE PREORDINE -->
     <div id="preorderModal" class="preorder-modal">
-        <div class="modal-content">
-            <span class="close-modal" onclick="closePreorderModal()">&times;</span>
-            <h2 class="preorder-title">ORDINA ora C29 per avere la seconda batteria in OMAGGIO!</h2>
-            
-            <form class="preorder-form" action="https://formspree.io/f/mvgvajgv" method="POST">
-                <p style="text-align: center; margin-bottom: 20px;">Lasciaci i tuoi dati e sarai ricontattato per completare l'ordine!</p>
-                
-                <label for="name">Nome e Cognome</label>
-                <input type="text" id="name" name="Nome" required> 
-                
-                <label for="email">Email</label>
-                <input type="email" id="email" name="Email" required>
-                
-                <label for="phone">Telefono</label>
-                 <input type="tel" id="phone" name="Telefono" required>
-                
-                <input type="hidden" name="_subject" value="Nuovo Preordine C29">
-
-                <button type="submit">INVIA RICHIESTA DI PREORDINE</button>
-            </form>
-        </div>
+      <div class="modal-content">
+        <span class="close-modal" onclick="closePreorderModal()">&times;</span>
+        <h2 class="preorder-title">ORDINA ora C29 per avere la seconda batteria in OMAGGIO!</h2>
+        <form class="preorder-form" action="https://formspree.io/f/mvgvajgv" method="POST">
+          <p style="text-align:center;margin-bottom:20px;">Lasciaci i tuoi dati e sarai ricontattato per completare l'ordine!</p>
+          <label for="name">Nome e Cognome</label>
+          <input type="text" id="name" name="Nome" required>
+          <label for="email">Email</label>
+          <input type="email" id="email" name="Email" required>
+          <label for="phone">Telefono</label>
+          <input type="tel" id="phone" name="Telefono" required>
+          <input type="hidden" name="_subject" value="Nuovo Preordine C29">
+          <button type="submit">INVIA RICHIESTA DI PREORDINE</button>
+        </form>
+      </div>
     </div>
 
-
+    <!-- MODALE CONTATTI -->
     <div id="contactModal" class="contact-modal">
-        <div class="modal-content">
-            <span class="close-modal" onclick="closeContactModal()">&times;</span>
-            <h2 class="contact-title">CONTATTI</h2>
-            <div class="company-name"><img src="IKKI_Solution.png" alt="IKKI Solutions Logo" style="width:60px;margin-right:10px;">IKKI SOLUTIONS</div>
-                
-                <div class="contact-item">
-                    <i class="fas fa-phone"></i>
-                    <strong>Telefono:</strong><br>
-                    +39 045 693 7836
-                </div>
-                
-                <div class="contact-item">
-                    <i class="fas fa-mobile-alt"></i>
-                    <strong>Cellulare:</strong><br>
-                    347 7985007
-                </div>
-                
-                <div class="contact-item">
-                    <i class="fas fa-envelope"></i>
-                    <strong>Email:</strong><br>
-                    ikkisolutions@gmail.com
-                </div>
-            </div>
-        </div>
+      <div class="modal-content">
+        <span class="close-modal" onclick="closeContactModal()">&times;</span>
+        <h2 class="contact-title">CONTATTI</h2>
+        <div class="company-name"><img src="IKKI_Solution.png" alt="IKKI Solutions Logo" style="width:60px;margin-right:10px;">IKKI SOLUTIONS</div>
+        <div class="contact-item"><i class="fas fa-phone"></i><strong>Telefono:</strong><br> +39 045 693 7836</div>
+        <div class="contact-item"><i class="fas fa-mobile-alt"></i><strong>Cellulare:</strong><br> 347 7985007</div>
+        <div class="contact-item"><i class="fas fa-envelope"></i><strong>Email:</strong><br> ikkisolutions@gmail.com</div>
+      </div>
     </div>
 
+    <!-- PAGINAZIONE -->
     <div class="pagination">
-        <button class="page-btn"><i class="fas fa-arrow-left"></i> PRECEDENTE</button>
-        <button class="page-btn">SUCCESSIVA <i class="fas fa-arrow-right"></i></button>
+      <button class="page-btn"><i class="fas fa-arrow-left"></i> PRECEDENTE</button>
+      <button class="page-btn">SUCCESSIVA <i class="fas fa-arrow-right"></i></button>
     </div>
 
     <div class="footer">
-        <p>C29 - Tecnologia avanzata per una pulizia perfetta | <a href="https://ikki-fpv.github.io/C29/" target="_blank" style="color: #00fff2; text-decoration: none;">https://ikki-fpv.github.io/C29/</a></p>
+      <p>C29 - Tecnologia avanzata per una pulizia perfetta | <a href="https://ikki-fpv.github.io/C29/" target="_blank" style="color:#00fff2;text-decoration:none;">https://ikki-fpv.github.io/C29/</a></p>
     </div>
 
 <script>
-        let currentPage = 1;
-        const totalPages = 10;
-        let continuousScrollInterval = null; // Variabile per il timer di scorrimento CONTINUO (setInterval)
-        let initialWaitTimeout = null; // Variabile per la PAUSA INIZIALE (setTimeout)
-        let isAutoScrollActive = false; // Flag che indica se il loop continuo è attivo
-        const autoScrollTime = 6500; // 5 secondi per transizione pagina
-        // Rimosso videoAutoStartTime: la pausa è ora gestita da initialWaitTimeout
+  let currentPage = 1;
+  const totalPages = 10;
+  let continuousScrollInterval = null;
+  let initialWaitTimeout = null;
+  let isAutoScrollActive = false;
+  const autoScrollTime = 20000; // 20s per lasciare “respirare” lo slideshow
 
-        /**
-         * Funzione principale per il cambio pagina.
-         * @param {number} direction - La direzione del cambio pagina (+1 per Successiva, -1 per Precedente).
-         */
-        function changePage(direction) {
-            // Nascondi pagina corrente
-            document.getElementById('page' + currentPage).classList.remove('active');
-            
-            // Cambia pagina (ciclico)
-            currentPage += direction;
-            
-            // Controlla i limiti (ciclico)
-            if (currentPage < 1) currentPage = totalPages;
-            if (currentPage > totalPages) currentPage = 1;
-            
-            // Mostra nuova pagina
-            document.getElementById('page' + currentPage).classList.add('active');
-            
-            // Aggiorna indicatore di pagina
-            // Nota: ho aggiunto un selettore di pagina mancante per l'indicatore nell'HTML, assicurati che sia presente in tutte le pagine!
-            const indicator = document.querySelector('#page' + currentPage + ' .page-indicator');
-            if (indicator) {
-                indicator.textContent = 'Pagina ' + currentPage + ' di ' + totalPages;
-            }
+  function changePage(direction) {
+    document.getElementById('page' + currentPage).classList.remove('active');
+    currentPage += direction;
+    if (currentPage < 1) currentPage = totalPages;
+    if (currentPage > totalPages) currentPage = 1;
+    document.getElementById('page' + currentPage).classList.add('active');
 
-            // Scrolla in alto
-            window.scrollTo(0, 0);
-        }
+    // Aggiorna indicatore pagina
+    const indicator = document.querySelector('#page' + currentPage + ' .page-indicator');
+    if (indicator) indicator.textContent = 'Pagina ' + currentPage + ' di ' + totalPages;
 
-        /**
-         * Avvia il loop di scorrimento continuo (ogni 5 secondi).
-         */
-        function startContinuousScroll() {
-            if (isAutoScrollActive) return; // Evita duplicati
-            isAutoScrollActive = true;
-            clearInterval(continuousScrollInterval); 
-            continuousScrollInterval = setInterval(() => {
-                changePage(1); // Vai alla pagina successiva
-            }, autoScrollTime);
-        }
-        
-        /**
-         * Ferma tutti i timer (sia la pausa iniziale che il loop continuo).
-         */
-        function disableAutoScroll() {
-            if (initialWaitTimeout) clearTimeout(initialWaitTimeout); 
-            clearInterval(continuousScrollInterval); 
-            isAutoScrollActive = false;
-        }
+    // Stop slideshow quando si lascia pagina 1
+    if (currentPage !== 1 && slideInterval) { clearInterval(slideInterval); }
 
-        /**
-         * Avvia la pausa iniziale di 5 secondi e poi passa al loop continuo.
-         */
-        function startInitialWait() {
-            disableAutoScroll(); // Azzera tutti i timer prima di partire
-            initialWaitTimeout = setTimeout(() => {
-                if (currentPage === 1) {
-                    changePage(1); // Passa alla Pagina 2 dopo la pausa iniziale
-                }
-                startContinuousScroll(); // Avvia lo scorrimento continuo
-            }, autoScrollTime); // 5000ms di pausa iniziale
-        }
+    window.scrollTo(0, 0);
+  }
 
-        /**
-         * Wrapper per il cambio pagina manuale (disattiva l'auto-scroll).
-         */
-        function userChangePage(direction) {
-            disableAutoScroll();
-            changePage(direction);
-        }
+  function startContinuousScroll() {
+    if (isAutoScrollActive) return;
+    isAutoScrollActive = true;
+    clearInterval(continuousScrollInterval);
+    continuousScrollInterval = setInterval(() => { changePage(1); }, autoScrollTime);
+  }
 
-        /* Gestione Modali */
-        function openContactModal() {
-            document.getElementById('contactModal').style.display = 'flex';
-            disableAutoScroll(); // Metti in pausa lo scorrimento
-        }
+  function disableAutoScroll() {
+    if (initialWaitTimeout) clearTimeout(initialWaitTimeout);
+    clearInterval(continuousScrollInterval);
+    isAutoScrollActive = false;
+  }
 
-        function closeContactModal() {
-            document.getElementById('contactModal').style.display = 'none';
-            // Quando si chiude la modale, riavvia la sequenza (dal timer di pausa iniziale)
-            startInitialWait(); 
-        }
-        
-        function openPreorderModal() {
-            document.getElementById('preorderModal').style.display = 'flex';
-            disableAutoScroll(); // Metti in pausa lo scorrimento
-        }
+  function startInitialWait() {
+    disableAutoScroll();
+    initialWaitTimeout = setTimeout(() => {
+      if (currentPage === 1) changePage(1);
+      startContinuousScroll();
+    }, autoScrollTime);
+  }
 
-        function closePreorderModal() {
-            document.getElementById('preorderModal').style.display = 'none';
-            // Quando si chiude la modale, riavvia la sequenza (dal timer di pausa iniziale)
-            startInitialWait();
-        }
-        
-        // Chiudi le modali se si clicca fuori dal contenuto
-        window.onclick = function(event) {
-            const contactModal = document.getElementById('contactModal');
-            const preorderModal = document.getElementById('preorderModal');
+  function userChangePage(direction) {
+    disableAutoScroll();
+    changePage(direction);
+  }
 
-            if (event.target === contactModal) {
-                closeContactModal();
-            }
-            if (event.target === preorderModal) {
-                closePreorderModal();
-            }
-        }
-
-        // Gestione del video e Autoplay/Autoscroll
-        document.addEventListener('DOMContentLoaded', function() {
-            const video = document.getElementById('demoVideo');
-            const videoContainer = document.getElementById('videoContainer');
-            const videoPlaceholderCover = document.getElementById('videoPlaceholderCover');
-            const image = videoContainer.querySelector('img');
-
-            // Funzione per ripristinare lo stato iniziale (immagine)
-            function resetCover() {
-                video.pause();
-                video.currentTime = 0;
-                video.style.opacity = '0';
-                image.style.opacity = '1';
-                videoPlaceholderCover.style.opacity = '1';
-                videoPlaceholderCover.style.display = 'flex';
-                video.muted = false; 
-            }
-            
-            // Funzione per riprodurre il video
-            function playVideo() {
-                video.style.opacity = '1';
-                image.style.opacity = '0';
-                videoPlaceholderCover.style.opacity = '0';
-                videoPlaceholderCover.style.display = 'none';
-                
-                video.muted = false; // Riattiva l'audio per l'utente
-
-                const playPromise = video.play();
-                
-                if (playPromise !== undefined) {
-                    playPromise.catch(error => {
-                        // Autoplay bloccato. Lasciamo che il timer iniziale gestisca lo scorrimento.
-                        console.error("Autoplay bloccato. Pausa iniziale in corso.");
-                        resetCover();
-                        // Importante: Non facciamo nulla qui per evitare di interferire con startInitialWait()
-                    });
-                }
-            }
-
-            // 1. AVVIA IL TIMER PRINCIPALE SUBITO
-            startInitialWait();
-            
-            if (videoContainer && video) {
-                
-                // Tenta un'autoplay immediato per intercettare l'errore subito
-                setTimeout(playVideo, 1000); 
-
-                // Interazione manuale del riquadro video
-                videoContainer.addEventListener('click', function() {
-                    disableAutoScroll(); // Ferma la pausa iniziale e il loop
-                    if (video.paused) {
-                        playVideo();
-                    }
-                });
-
-                // Quando il video finisce
-                video.addEventListener('ended', function() {
-                    resetCover(); 
-                    
-                    if (currentPage === 1) {
-                        changePage(1); // Vai alla pagina 2 subito dopo la fine
-                    }
-                    
-                    startContinuousScroll(); // Avvia lo scorrimento continuo
-                });
-                
-                // Gestione errori video (URL non trovato/errore di caricamento)
-                video.addEventListener('error', function() {
-                    console.error("Errore nel caricamento del video. La pausa iniziale prosegue.");
-                    videoPlaceholderCover.innerHTML = '<i class="fas fa-exclamation-triangle"></i><p>Video non disponibile.</p>';
-                    resetCover();
-                    // Non avviare l'auto-scroll qui, ci penserà il timer iniziale.
-                });
-            } else {
-                 // No video: Il timer startInitialWait() è già avviato e gestirà tutto.
-            }
-            
-            // Collega i pulsanti di paginazione a userChangePage per disattivare l'auto-scroll
-            const paginationButtons = document.querySelectorAll('.pagination .page-btn');
-            paginationButtons.forEach(button => {
-                button.addEventListener('click', function() {
-                    const direction = this.innerText.includes('PRECEDENTE') ? -1 : 1;
-                    userChangePage(direction);
-                });
-            });
-
-
-            // Navigazione con tastiera - Chiama userChangePage per disattivare
-            document.addEventListener('keydown', function(e) {
-                if (e.key === 'ArrowLeft') {
-                    userChangePage(-1);
-                } else if (e.key === 'ArrowRight') {
-                    userChangePage(1);
-                }
-            });
-
-            // LOGICA: Gestione dell'effetto ZOOM sulle immagini (NON MODIFICATA)
-            const zoomContainers = document.querySelectorAll('.image-container');
-
-            zoomContainers.forEach(container => {
-                const baseImage = container.querySelector('img');
-                
-                if (baseImage) {
-                    const zoomImage = document.createElement('img');
-                    zoomImage.src = baseImage.src; 
-                    zoomImage.alt = baseImage.alt + ' (Zoom)';
-                    zoomImage.classList.add('zoom-img');
-                    container.appendChild(zoomImage);
-                    
-                    function handleZoom(e) {
-                        e.preventDefault(); 
-                        const rect = container.getBoundingClientRect();
-                        
-                        const clientX = e.clientX || (e.touches && e.touches[0] ? e.touches[0].clientX : null);
-                        const clientY = e.clientY || (e.touches && e.touches[0] ? e.touches[0].clientY : null);
-                        
-                        if (clientX === null) return; 
-                        
-                        let x = clientX - rect.left; 
-                        let y = clientY - rect.top; 
-
-                        x = Math.max(0, Math.min(x, rect.width));
-                        y = Math.max(0, Math.min(y, rect.height));
-
-                        const translateX = -x * 2; 
-                        const translateY = -y * 2;
-
-                        zoomImage.style.transform = `translate(${translateX}px, ${translateY}px)`;
-                    }
-
-                    container.addEventListener('mousemove', handleZoom);
-                    container.addEventListener('mouseenter', () => { zoomImage.style.opacity = '1'; });
-                    container.addEventListener('mouseleave', () => { zoomImage.style.opacity = '0'; });
-
-                    container.addEventListener('touchstart', (e) => {
-                        zoomImage.style.opacity = '1';
-                        handleZoom(e);
-                    });
-                    container.addEventListener('touchmove', handleZoom); 
-                    container.addEventListener('touchend', () => { zoomImage.style.opacity = '0'; });
-                }
-            });
-        });
-        /* --- SLIDESHOW AUTOMATICO COPERTINA --- */
-const slides = document.querySelectorAll('.cover-slideshow .slide');
-let currentSlide = 0;
-
-function showNextSlide() {
-  slides[currentSlide].classList.remove('active');
-  currentSlide = (currentSlide + 1) % slides.length;
-  slides[currentSlide].classList.add('active');
-}
-
-let slideInterval = setInterval(showNextSlide, 3000);
-
-const slideshowContainer = document.querySelector('.cover-slideshow');
-if (slideshowContainer) {
-  slideshowContainer.addEventListener('mouseenter', () => clearInterval(slideInterval));
-  slideshowContainer.addEventListener('mouseleave', () => {
-    slideInterval = setInterval(showNextSlide, 3000);
+  /* Lega i pulsanti PRECEDENTE/SUCCESSIVA */
+  document.querySelectorAll('.pagination .page-btn').forEach(btn => {
+    btn.addEventListener('click', function(){
+      const direction = this.innerText.includes('PRECEDENTE') ? -1 : 1;
+      userChangePage(direction);
+    });
   });
-}
-    </script>
+
+  /* Navigazione con tastiera */
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'ArrowLeft') userChangePage(-1);
+    else if (e.key === 'ArrowRight') userChangePage(1);
+  });
+
+  /* ZOOM immagini nelle pagine interne */
+  const zoomContainers = document.querySelectorAll('.image-container');
+  zoomContainers.forEach(container => {
+    const baseImage = container.querySelector('img');
+    if (baseImage) {
+      const zoomImage = document.createElement('img');
+      zoomImage.src = baseImage.src;
+      zoomImage.alt = (baseImage.alt || '') + ' (Zoom)';
+      zoomImage.classList.add('zoom-img');
+      container.appendChild(zoomImage);
+
+      function handleZoom(e) {
+        e.preventDefault();
+        const rect = container.getBoundingClientRect();
+        const clientX = e.clientX || (e.touches && e.touches[0] ? e.touches[0].clientX : null);
+        const clientY = e.clientY || (e.touches && e.touches[0] ? e.touches[0].clientY : null);
+        if (clientX === null) return;
+        let x = clientX - rect.left; let y = clientY - rect.top;
+        x = Math.max(0, Math.min(x, rect.width)); y = Math.max(0, Math.min(y, rect.height));
+        const translateX = -x * 2; const translateY = -y * 2;
+        zoomImage.style.transform = `translate(${translateX}px, ${translateY}px)`;
+      }
+
+      container.addEventListener('mousemove', handleZoom);
+      container.addEventListener('mouseenter', () => { zoomImage.style.opacity = '1'; });
+      container.addEventListener('mouseleave', () => { zoomImage.style.opacity = '0'; });
+      container.addEventListener('touchstart', e => { zoomImage.style.opacity = '1'; handleZoom(e); });
+      container.addEventListener('touchmove', handleZoom);
+      container.addEventListener('touchend', () => { zoomImage.style.opacity = '0'; });
+    }
+  });
+
+  /* --- SLIDESHOW COPERTINA (auto + frecce + pallini) --- */
+  const slides = document.querySelectorAll('.cover-slideshow .slide');
+  const dotsContainer = document.querySelector('.slide-dots');
+  slides.forEach((_, i) => {
+    const dot = document.createElement('span');
+    if (i === 0) dot.classList.add('active');
+    dot.addEventListener('click', () => goToSlide(i));
+    dotsContainer.appendChild(dot);
+  });
+  const dots = dotsContainer.querySelectorAll('span');
+
+  let currentSlide = 0;
+  function showSlide(index){
+    slides[currentSlide].classList.remove('active'); dots[currentSlide].classList.remove('active');
+    currentSlide = index;
+    slides[currentSlide].classList.add('active'); dots[currentSlide].classList.add('active');
+  }
+  function nextSlide(){ showSlide((currentSlide + 1) % slides.length); }
+  function prevSlide(){ showSlide((currentSlide - 1 + slides.length) % slides.length); }
+  function goToSlide(i){ showSlide(i); }
+  document.querySelector('.slide-next').addEventListener('click', nextSlide);
+  document.querySelector('.slide-prev').addEventListener('click', prevSlide);
+
+  let slideInterval = setInterval(nextSlide, 3000);
+  const slideshowContainer = document.querySelector('.cover-slideshow');
+  slideshowContainer.addEventListener('mouseenter', () => clearInterval(slideInterval));
+  slideshowContainer.addEventListener('mouseleave', () => { slideInterval = setInterval(nextSlide, 3000); });
+
+  /* Modali */
+  function openContactModal(){ document.getElementById('contactModal').style.display = 'flex'; disableAutoScroll(); }
+  function closeContactModal(){ document.getElementById('contactModal').style.display = 'none'; startInitialWait(); }
+  function openPreorderModal(){ document.getElementById('preorderModal').style.display = 'flex'; disableAutoScroll(); }
+  function closePreorderModal(){ document.getElementById('preorderModal').style.display = 'none'; startInitialWait(); }
+  window.onclick = function(e){
+    const contactModal = document.getElementById('contactModal');
+    const preorderModal = document.getElementById('preorderModal');
+    if (e.target === contactModal) closeContactModal();
+    if (e.target === preorderModal) closePreorderModal();
+  }
+
+  /* Video cover */
+  document.addEventListener('DOMContentLoaded', function() {
+    const video = document.getElementById('demoVideo');
+    const videoContainer = document.getElementById('videoContainer');
+    const videoPlaceholderCover = document.getElementById('videoPlaceholderCover');
+    const image = videoContainer.querySelector('img');
+
+    function resetCover(){
+      video.pause(); video.currentTime = 0;
+      video.style.opacity = '0'; image.style.opacity = '1';
+      videoPlaceholderCover.style.opacity = '1'; videoPlaceholderCover.style.display = 'flex';
+      video.muted = false;
+    }
+    function playVideo(){
+      video.style.opacity = '1'; image.style.opacity = '0';
+      videoPlaceholderCover.style.opacity = '0'; videoPlaceholderCover.style.display = 'none';
+      video.muted = false;
+      const playPromise = video.play();
+      if (playPromise !== undefined) {
+        playPromise.catch(()=>{ resetCover(); });
+      }
+    }
+
+    startInitialWait(); // parte la pausa iniziale per l’autoscroll
+    setTimeout(()=>{ /* tentativo avvio video opzionale */ }, 1000);
+
+    videoContainer.addEventListener('click', function(){ disableAutoScroll(); if (video.paused) playVideo(); });
+    video.addEventListener('ended', function(){ resetCover(); if (currentPage === 1) changePage(1); startContinuousScroll(); });
+    video.addEventListener('error', function(){ videoPlaceholderCover.innerHTML = '<i class="fas fa-exclamation-triangle"></i><p>Video non disponibile.</p>'; resetCover(); });
+  });
+</script>
 </body>
 </html>
