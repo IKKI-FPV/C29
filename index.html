@@ -318,11 +318,22 @@
         @media (max-width: 800px) {
             .grid-2 { grid-template-columns: 1fr; }
             .title-hero { font-size: 3rem; }
-            .brochure { margin-bottom: 100px; min-height: auto; } /* Spazio per nav mobile */
-            .bottom-nav-bar { width: 90%; padding: 8px 15px; }
-            .nav-btn span { display: none; } /* Nasconde testo "Prev/Next" su mobile, lascia icone */
-            .page { padding: 20px; }
-        }
+           /* --- NUOVO CODICE AGGIUNTO --- */
+    .logo-top {
+        position: static;             /* Smette di fluttuare sopra gli altri elementi */
+        margin: 20px auto 10px auto;  /* Si centra orizzontalmente e crea spazio sopra/sotto */
+        display: block;               /* Si comporta come un blocco solido */
+        width: 90px;                  /* Leggermente più piccolo per il mobile */
+    }
+
+    /* --- MODIFICA ALLA BROCHURE --- */
+    /* Ho aggiunto margin-top: 10px perché ora c'è il logo sopra di essa */
+    .brochure { margin-bottom: 100px; min-height: auto; margin-top: 10px; } 
+
+    .bottom-nav-bar { width: 90%; padding: 8px 15px; }
+    .nav-btn span { display: none; } 
+    .page { padding: 20px; }
+}
     </style>
 </head>
 <body>
