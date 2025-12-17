@@ -96,13 +96,50 @@
         }
         .page-counter span { color: #ff8c00; font-weight: bold; }
 
+        /* --- ANIMAZIONE TESTO IMPORTATA (IKKI) --- */
+        @keyframes neon-pulse {
+            from {
+                /* Stato iniziale: bagliore Ciano */
+                text-shadow: 
+                    0 0 5px #fff,
+                    0 0 10px #fff,
+                    0 0 20px #0ff,
+                    0 0 40px #0ff,
+                    0 0 80px #0ff,
+                    0 0 120px #00aaff,
+                    0 0 150px #00aaff;
+            }
+            to {
+                /* Stato finale: bagliore Magenta/Viola */
+                color: #e0ffff;
+                text-shadow: 
+                    0 0 10px #fff,
+                    0 0 20px #fff,
+                    0 0 30px #ff00ff,
+                    0 0 50px #ff00ff,
+                    0 0 100px #ff00ff,
+                    0 0 150px #ff0080,
+                    0 0 200px #ff0080;
+            }
+        }
+
         /* --- TIPOGRAFIA --- */
         .title-hero {
             font-family:'Orbitron', sans-serif; font-size: 4.5rem; font-weight: 900; letter-spacing: 6px;
             color: #fff; text-align: center; margin-bottom: 5px;
-            /* Super Glow Testo */
-            text-shadow: 0 0 10px #00fff2, 0 0 20px #00fff2, 0 0 40px #00a8ff;
+            
+            /* Applicazione Effetto IKKI */
+            text-shadow: 
+                0 0 5px #fff,
+                0 0 10px #fff,
+                0 0 20px #0ff,
+                0 0 40px #0ff,
+                0 0 80px #0ff,
+                0 0 120px #00aaff,
+                0 0 150px #00aaff;
+            animation: neon-pulse 2s infinite alternate ease-in-out;
         }
+
         .subtitle-hero {
             font-family:'Orbitron', sans-serif; font-size: 1.3rem; color: #00fff2; letter-spacing: 3px;
             margin-bottom: 25px; text-align: center; text-shadow: 0 0 10px rgba(0, 255, 242, 0.5);
@@ -210,10 +247,24 @@
             font-size: 1.3rem; cursor: pointer;
             width: 100%; max-width: 400px; margin: 20px auto; display: block;
             overflow: hidden;
+            
             /* GLOW ESTERNO MASSICCIO */
             box-shadow: 0 0 20px #ff4500, 0 0 40px rgba(255, 69, 0, 0.5), inset 0 0 10px rgba(255,255,255,0.5);
             transition: all 0.3s;
-            animation: pulse-orange 2s infinite;
+            
+            /* ANIMAZIONI COMBINATE: Pulsazione bottone + Pulsazione testo IKKI */
+            animation: pulse-orange 2s infinite, neon-pulse 2s infinite alternate ease-in-out;
+            
+            /* Applicazione Effetto IKKI al testo del bottone */
+            text-shadow: 
+                0 0 5px #fff,
+                0 0 10px #fff,
+                0 0 20px #0ff,
+                0 0 40px #0ff,
+                0 0 80px #0ff,
+                0 0 120px #00aaff,
+                0 0 150px #00aaff;
+            
             z-index: 1;
         }
 
@@ -396,7 +447,7 @@
             <div style="text-align:center; background:rgba(255,140,0,0.05); padding:30px; border-radius:20px; border:2px solid #ff8c00; box-shadow: 0 0 30px rgba(255,140,0,0.1);">
                 <h2 style="font-family:'Orbitron'; font-size:3.5rem; margin:0; color:#ff8c00; text-shadow: 0 0 20px #ff4500;">59,90 €</h2>
                 <p style="font-size:1.2rem; margin-top:10px; color:#fff;">PREZZO LANCIO</p>
-                <p style="color:#00fff2; font-weight:bold; margin-bottom:20px; font-size:1.1rem;">+ SECONDA BATTERIA INCLUSA (Valore 19.90€)</p>
+                <p style="color:#00fff2; font-weight:bold; margin-bottom:20px; font-size:1.1rem;">+ SECONDA BATTERIA INCLUSA (Valore 19€)</p>
                 
                 <button class="btn-super-glow" onclick="openModal()">ORDINA ADESSO <i class="fas fa-rocket"></i></button>
                 
