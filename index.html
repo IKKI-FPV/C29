@@ -25,7 +25,16 @@
         }
 
         /* SFONDO PARTICELLE (JS) */
-        #particles-js { position: fixed; width: 100%; height: 100%; top: 0; left: 0; z-index: 0; pointer-events: none; }
+        #particles-js { 
+            position: fixed; width: 100%; height: 100%; top: 0; left: 0; z-index: 0; pointer-events: none; 
+            /* ANIMAZIONE COLORE SINCRONIZZATA */
+            animation: particle-hue-shift 2s infinite alternate ease-in-out;
+        }
+
+        @keyframes particle-hue-shift {
+            from { filter: hue-rotate(0deg); } /* Ciano (Start) */
+            to { filter: hue-rotate(120deg); } /* Viola/Magenta (End) */
+        }
 
         /* --- CONTENITORE PRINCIPALE --- */
         .brochure {
