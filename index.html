@@ -522,16 +522,62 @@
 
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script>
-        // Init Particles
+        // Init Particles - CONFIGURAZIONE AGGIORNATA PER INTERATTIVITÀ
         particlesJS("particles-js", {
             "particles": { 
-                "number": { "value": 100 }, 
+                "number": { "value": 80, "density": { "enable": true, "value_area": 800 } }, 
                 "color": { "value": "#00fff2" }, 
-                "opacity": { "value": 0.4, "random": true }, 
-                "size": { "value": 2, "random": true }, 
-                "line_linked": { "enable": true, "distance": 150, "color": "#00fff2", "opacity": 0.15, "width": 1 }, 
-                "move": { "speed": 1.5, "direction": "none", "random": true } 
-            }
+                "shape": { "type": "circle" },
+                "opacity": { "value": 0.5, "random": true }, 
+                "size": { "value": 3, "random": true }, 
+                "line_linked": { 
+                    "enable": true, 
+                    "distance": 150, 
+                    "color": "#00fff2", 
+                    "opacity": 0.2, 
+                    "width": 1 
+                }, 
+                "move": { 
+                    "enable": true,
+                    "speed": 2, 
+                    "direction": "none", 
+                    "random": false,
+                    "straight": false,
+                    "out_mode": "out",
+                    "bounce": false,
+                    "attract": { "enable": false }
+                } 
+            },
+            // --- QUESTA È LA PARTE CHE RENDE INTERATTIVO IL RETICOLO ---
+            "interactivity": {
+                "detect_on": "window", // Importante: Rileva il mouse su tutta la finestra, anche sopra la brochure
+                "events": {
+                    "onhover": {
+                        "enable": true,
+                        "mode": "grab" // 'grab' crea le linee verso il mouse, 'repulse' le spinge via
+                    },
+                    "onclick": {
+                        "enable": true,
+                        "mode": "push"
+                    },
+                    "resize": true
+                },
+                "modes": {
+                    "grab": {
+                        "distance": 200, // Raggio di interazione
+                        "line_linked": {
+                            "opacity": 0.8 // Opacità linee di connessione al mouse
+                        }
+                    },
+                    "repulse": {
+                        "distance": 100
+                    },
+                    "push": {
+                        "particles_nb": 4
+                    }
+                }
+            },
+            "retina_detect": true
         });
 
         // Page Logic
@@ -567,49 +613,49 @@
         }, 3000);
 
        // Video Player - FIX CONTROLLI
-function toggleVideo() {
-    const video = document.getElementById("heroVideo");
-    const overlay = document.querySelector(".play-overlay");
-    const cover = document.getElementById("videoCover");
-    
-    if(video.paused) {
-        // 1. Avvia il video
-        video.play();
-        
-        // 2. Abilita i controlli nativi del browser (barra, volume, ecc)
-        video.setAttribute("controls", "controls");
-        
-        // 3. Nascondi l'overlay e la copertina
-        overlay.style.opacity = "0";
-        if(cover) cover.style.opacity = "0";
-        
-        // Rimuovi l'overlay dal flusso per evitare click fantasma
-        setTimeout(() => { 
-            overlay.style.display = "none"; 
-        }, 300);
-    } else {
-        // Se l'utente clicca mentre va (caso raro col click diretto, ma utile)
-        video.pause();
-    }
-}
+        function toggleVideo() {
+            const video = document.getElementById("heroVideo");
+            const overlay = document.querySelector(".play-overlay");
+            const cover = document.getElementById("videoCover");
+            
+            if(video.paused) {
+                // 1. Avvia il video
+                video.play();
+                
+                // 2. Abilita i controlli nativi del browser (barra, volume, ecc)
+                video.setAttribute("controls", "controls");
+                
+                // 3. Nascondi l'overlay e la copertina
+                overlay.style.opacity = "0";
+                if(cover) cover.style.opacity = "0";
+                
+                // Rimuovi l'overlay dal flusso per evitare click fantasma
+                setTimeout(() => { 
+                    overlay.style.display = "none"; 
+                }, 300);
+            } else {
+                // Se l'utente clicca mentre va (caso raro col click diretto, ma utile)
+                video.pause();
+            }
+        }
 
-// Opzionale: Se il video finisce, rimettiamo la copertina
-document.getElementById("heroVideo").addEventListener('ended', function() {
-    const video = document.getElementById("heroVideo");
-    const overlay = document.querySelector(".play-overlay");
-    const cover = document.getElementById("videoCover");
-    
-    video.removeAttribute("controls"); // Nascondi i controlli alla fine
-    video.currentTime = 0; // Torna all'inizio
-    
-    // Riporta visibili overlay e cover
-    overlay.style.display = "flex";
-    // Piccolo ritardo per permettere il display flex prima dell'opacity
-    setTimeout(() => {
-        overlay.style.opacity = "1";
-        if(cover) cover.style.opacity = "1";
-    }, 10);
-});
+        // Opzionale: Se il video finisce, rimettiamo la copertina
+        document.getElementById("heroVideo").addEventListener('ended', function() {
+            const video = document.getElementById("heroVideo");
+            const overlay = document.querySelector(".play-overlay");
+            const cover = document.getElementById("videoCover");
+            
+            video.removeAttribute("controls"); // Nascondi i controlli alla fine
+            video.currentTime = 0; // Torna all'inizio
+            
+            // Riporta visibili overlay e cover
+            overlay.style.display = "flex";
+            // Piccolo ritardo per permettere il display flex prima dell'opacity
+            setTimeout(() => {
+                overlay.style.opacity = "1";
+                if(cover) cover.style.opacity = "1";
+            }, 10);
+        });
 
         // Zoom Logic
         document.querySelectorAll('.img-zoom-container').forEach(el => {
